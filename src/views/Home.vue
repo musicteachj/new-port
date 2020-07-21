@@ -1,18 +1,55 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="home">
+    <v-card 
+      id="top"
+      :height="window.height"
+      :width="window.width"
+      color="blue">
+      <h1>home</h1>
+    </v-card>
+    <v-card
+      id="bottom">
+      <h1>more</h1>
+    </v-card>
+    
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<script lang="ts">
+import Vue from 'vue';
+import Component from 'vue-class-component';
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+@Component({})
+export default class Home extends Vue {
+  // LOCAL VARIABLES ------------------
+   window: any = {
+    width: 0,
+    height: 0
   }
+
+  // COMPUTED -------------------------
+
+  // EVENTS ---------------------------
+
+  // LIFECYCLE EVENTS -----------------
+  created() {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize();
+  }
+
+  destroyed() {
+    window.removeEventListener('resize', this.handleResize)
+  }
+
+  // METHODS --------------------------
+  handleResize() {
+    this.window.width = window.innerWidth;
+    this.window.height = window.innerHeight;
+  }
+
 }
 </script>
+
+<style scoped>
+
+</style>
