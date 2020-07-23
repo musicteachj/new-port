@@ -8,15 +8,6 @@
       class="d-flex align-content-center flex-wrap">
       <v-col cols="12">
         <v-row class="ml-3 mr-3 pb-8 justify-center">
-          <!-- <v-card
-            v-for="n in 20"
-            :key="n"
-            class="pa-2"
-            outlined
-            tile
-          >
-            Flex item
-          </v-card> -->
           <div :class="`text-${nameFontSize}`">{{window.width}}</div>
         </v-row>
 
