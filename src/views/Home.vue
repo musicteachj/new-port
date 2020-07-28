@@ -8,7 +8,7 @@
       class="d-flex align-content-center flex-wrap">
       <v-col cols="12">
         <v-row class="ml-3 mr-3 pb-8 justify-center">
-          <div :class="`text-${nameFontSize}`">{{window.width}}</div>
+          <p :class="`text-${nameFontSize}`">{{window.width}}</p>
         </v-row>
 
         <v-row class="ml-3 mr-3 justify-center">
