@@ -74,6 +74,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import Component from 'vue-class-component';
+import { set } from 'vue/types/umd';
 
 @Component({})
 export default class Home extends Vue {
@@ -163,16 +164,43 @@ export default class Home extends Vue {
 
   // METHODS --------------------------
   timeOutFunc() {
+    let timer = 1500;
+    setTimeout(() => {
+      this.showName = true;
+    //   for (const s of this.shows) {
+    //   console.log(s);
+    //    setTimeout(() => {
+    //     s.show = true
+    //   }, 1000);
+    // }
+    }, 1000);
+    // setTimeout(() => {
+    //   this.shows[0].show = true
+    // }, 1500);
+    //  setTimeout(() => {
+    //   this.shows[1].show = true
+    // }, 2000);
+    //  setTimeout(() => {
+    //   this.shows[2].show = true
+    // }, 2500);
+    //  setTimeout(() => {
+    //   this.shows[3].show = true
+    // }, 3000);
+    //  setTimeout(() => {
+    //   this.shows[4].show = true
+    // }, 3500)
+    
     setTimeout(() => {
       this.showName = true;
       for (const s of this.shows) {
-      console.log(s);
-       setTimeout(() => {
-        s.show = true
-      }, 1000);
-    }
-    }, 1000);
-    
+        console.log(s);
+        timer = timer += 500;
+        setTimeout(() => {
+          s.show = true;
+        }, timer);
+      }
+    }, 1000)
+
     // setTimeout(() => {
     //   console.log(this.shows[0].show1);
     //   this.shows[0].show1 = true
