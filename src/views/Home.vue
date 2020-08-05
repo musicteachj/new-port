@@ -77,6 +77,9 @@ export default class Home extends Vue {
     {show: false, id: 13, tech: "Git"},
     {show: false, id: 14, tech: "Node"},
     {show: false, id: 15, tech: "BitBucket"},
+    {show: false, id: 16, tech: "Jira"},
+    {show: false, id: 17, tech: "Azure"},
+    {show: false, id: 18, tech: "Vuetify"},
   ]
 
   // COMPUTED -------------------------
