@@ -27,7 +27,7 @@
           <div  
             v-for="s in shows"
             :key="s.id"
-            class="pa-4 mx-auto divIt"
+            class="pa-2 mx-auto divIt"
           >
             <transition name="nameNew">    
               <v-card v-once width="50" height="50" v-if="s.show">
