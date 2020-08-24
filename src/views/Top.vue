@@ -4,25 +4,27 @@
       id="topOneCard"
       :height="window.height / 2"
       :width="window.width"
-      color="blue"
+      flat
       class="d-flex align-content-end flex-wrap">
       <v-col cols="12">
        <v-row class="ml-3 mr-3 mb-16 justify-center">
           <transition name="name">
-            <p v-if="showName" :class="`text-${nameFontSize}`">{{window.width}}</p>
+            <!-- <p v-if="showName" :class="`text-${nameFontSize}`">{{window.width}}</p> -->
+            <p v-if="showName" :class="`text-${nameFontSize}`">James Littlefield</p>
+
           </transition>
         </v-row>
       </v-col>
     </v-card>
 
-    <v-card 
+    <v-card
+      flat
       id="topTwoCard"
       :height="window.height / 2"
       :width="window.width"
-      color="purple"
       class="d-flex align-content-start flex-wrap"
     >
-      <v-col cols="12" class="mx-auto" style="background-color:red; max-width: 90% !important;">
+      <v-col cols="12" class="mx-auto" style="max-width: 90% !important;">
         <!-- <v-row class="ml-3 mr-3 justify-center" style="background-color:blue">
           <div  
             v-for="s in shows"
@@ -37,52 +39,106 @@
           </div>
         </v-row> -->
 
-        <v-row class="ml-3 mr-3 justify-center" style="background-color:blue">
+         <!-- <div v-for="f in frontTech"
+                :key="f.id"
+                class="pa-2 mx-auto divIt">
+                <transition name="nameNew">
+                  <v-tooltip  v-if="f.show" bottom :color="f.color">
+                    <template v-slot:activator="{ on }">
+                      <v-img
+                       
+                        v-on="on"
+                        contain
+                        :src="f.img"
+                        max-width="auto"
+                        max-height="auto">
+                      </v-img>
+                    </template>
+                  <span>{{f.name}}</span>
+                </v-tooltip>
+              </transition>
+              </div> -->
+
+        <v-row class="ml-3 mr-3 justify-center">
           <div  
             v-for="s in frontTech"
             :key="s.id"
             class="pa-2 mx-auto divIt"
           >
+          <!-- Refactor this old code to new vuetify -->
             <transition name="nameNew">    
-              <v-card v-once width="50" height="50" v-if="s.show">
-                <p>{{s.tech}}</p>
+              <v-card flat v-once width="80" height="80" v-if="s.show">
+               <v-tooltip bottom :color="s.color">
+                <template v-slot:activator="{ on }">
+                  <v-img
+                    v-on="on"
+                    contain
+                    :src="s.img"
+                    max-width="auto"
+                    max-height="auto">
+                  </v-img>
+                </template>
+                <span>{{s.tech}}</span>
+              </v-tooltip>
               </v-card>
             </transition>
           </div>
         </v-row>
 
-        <v-row class="ml-3 mr-3 justify-center" style="background-color:orange">
+        <v-row class="ml-3 mr-3 justify-center" >
           <div  
             v-for="s in backTech"
             :key="s.id"
             class="pa-2 mx-auto divIt"
           >
             <transition name="nameNew">    
-              <v-card v-once width="50" height="50" v-if="s.show">
-                <p>{{s.tech}}</p>
+              <v-card flat v-once width="80" height="80" v-if="s.show">
+               <v-tooltip bottom :color="s.color">
+                <template v-slot:activator="{ on }">
+                  <v-img
+                    v-on="on"
+                    contain
+                    :src="s.img"
+                    max-width="auto"
+                    max-height="auto">
+                  </v-img>
+                </template>
+                <span>{{s.tech}}</span>
+              </v-tooltip>
               </v-card>
             </transition>
           </div>
         </v-row>
 
-        <v-row class="ml-3 mr-3 justify-center" style="background-color:cyan">
+        <v-row class="ml-3 mr-3 justify-center" >
           <div  
             v-for="s in otherTech"
             :key="s.id"
             class="pa-2 mx-auto divIt"
           >
             <transition name="nameNew">    
-              <v-card v-once width="50" height="50" v-if="s.show">
-                <p>{{s.tech}}</p>
+              <v-card flat v-once width="80" height="80" v-if="s.show">
+                <v-tooltip bottom :color="s.color">
+                <template v-slot:activator="{ on }">
+                  <v-img
+                    v-on="on"
+                    contain
+                    :src="s.img"
+                    max-width="auto"
+                    max-height="auto">
+                  </v-img>
+                </template>
+                <span>{{s.tech}}</span>
+              </v-tooltip>
               </v-card>
             </transition>
           </div>
         </v-row>
 
-        <v-row class="ml-3 mr-3 justify-center" style="background-color:blue">
+        <v-row class="ml-3 mr-3 justify-center" >
           <div class="divIt2 text-center">
             <transition name="nameNew">
-            <v-btn v-if="showBtn" class="mt-6">Projects</v-btn>
+            <v-btn v-if="showBtn" color="primary" class="mt-6">Projects</v-btn>
           </transition>
           </div>
           
@@ -99,6 +155,29 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 // import { set } from 'vue/types/umd';
 
+import HTML5 from '@/assets/techIcons/html-5-icon.png';
+import CSS3 from '@/assets/techIcons/css3-icon.jpg';
+import SASS from '@/assets/techIcons/Sass.png';
+import BOOTSTRAP from '@/assets/techIcons/bootstrap.png';
+import VUETIFY from '@/assets/techIcons/vuetify.png';
+
+import JAVASCRIPT from '@/assets/techIcons/javascript-logo.png';
+import TYPESCRIPT from '@/assets/techIcons/ts.png';
+import EXPRESS from '@/assets/techIcons/exp.png';
+import GRAPHQL from '@/assets/techIcons/graphql.png';
+import MONGODB from '@/assets/techIcons/mongodb.png';
+import VUE from '@/assets/techIcons/vue.png';
+import REACT from '@/assets/techIcons/react.png';
+import VUEX from '@/assets/techIcons/vuex.png';
+import NODE from '@/assets/techIcons/node.jpg';
+import HASURA from '@/assets/techIcons/hasura.png';
+
+import GIT from '@/assets/techIcons/git.png';
+import GITHUB from '@/assets/techIcons/github2.png';
+import BITBUCKET from '@/assets/techIcons/bitbucket.png';
+import JIRA from '@/assets/techIcons/jira.png';
+import AZURE from '@/assets/techIcons/azure.png';
+
 @Component({})
 export default class Top extends Vue {
   // LOCAL VARIABLES ------------------
@@ -110,31 +189,32 @@ export default class Top extends Vue {
   showBtn = false;
 
   frontTech: any = [
-    {show: false, id: 1, tech: "HTML"},
-    {show: false, id: 2, tech: "CSS"},
-    {show: false, id: 3, tech: "Sass"},
-    {show: false, id: 4, tech: "Bootstrap"},
-    {show: false, id: 5, tech: "Vuetify"},
+    {show: false, id: 1, tech: "HTML", img: HTML5, color: "#D1382B"},
+    {show: false, id: 2, tech: "CSS", img: CSS3, color: "#0277BC"},
+    {show: false, id: 3, tech: "Sass", img: SASS, color: "#CF649A"},
+    {show: false, id: 4, tech: "Bootstrap", img: BOOTSTRAP, color: "#723EBF"},
+    {show: false, id: 5, tech: "Vuetify", img: VUETIFY, color: "#1697F6"},
   ]
 
   backTech: any = [
-    {show: false, id: 1, tech: "JavaScript"},
-    {show: false, id: 2, tech: "TypeScript"},
-    {show: false, id: 3, tech: "Express"},
-    {show: false, id: 4, tech: "GraphQL"},
-    {show: false, id: 5, tech: "MongoDB"},
-    {show: false, id: 6, tech: "Vue"},
-    {show: false, id: 7, tech: "React"},
-    {show: false, id: 8, tech: "Vuex"},
-    {show: false, id: 9, tech: "Node"},
+    {show: false, id: 1, tech: "JavaScript", img: JAVASCRIPT, color: "#F7DF1E"},
+    {show: false, id: 2, tech: "TypeScript", img: TYPESCRIPT, color: "#007ACC"},
+    {show: false, id: 3, tech: "Express", img: EXPRESS, color: "#007ACC"},
+    {show: false, id: 4, tech: "GraphQL", img: GRAPHQL, color: "#007ACC"},
+    {show: false, id: 5, tech: "MongoDB", img: MONGODB, color: "#4CAF50"},
+    {show: false, id: 6, tech: "Vue", img: VUE, color: "#41B883"},
+    {show: false, id: 7, tech: "React", img: REACT, color: "#292929"},
+    {show: false, id: 8, tech: "Vuex", img: VUEX, color: "#292929"},
+    {show: false, id: 9, tech: "Node", img: NODE, color: "#8BC500"},
+    {show: false, id: 10, tech: "Hasura", img: HASURA, color: "#8BC500"},
   ]
 
   otherTech: any = [
-    {show: false, id: 1, tech: "Git"},
-    {show: false, id: 2, tech: "Github"},
-    {show: false, id: 3, tech: "BitBucket"},
-    {show: false, id: 4, tech: "Jira"},
-    {show: false, id: 5, tech: "Azure"},
+    {show: false, id: 1, tech: "Git", img: GIT, color: "#F05033"},
+    {show: false, id: 2, tech: "Github", img: GITHUB, color: "#008DD2"},
+    {show: false, id: 3, tech: "BitBucket", img: BITBUCKET, color: "#205081"},
+    {show: false, id: 4, tech: "Jira", img: JIRA, color: "#0052CC"},
+    {show: false, id: 5, tech: "Azure", img: AZURE, color: "#0052CC"},
   ]
 
   // shows: any = [
@@ -395,13 +475,13 @@ export default class Top extends Vue {
 } */
 
 .divIt {
-  background-color: green;
-  width: 75px;
-  height: 75px;
+  /* background-color: green; */
+  width: 95px;
+  height: 95px;
 }
 
 .divIt2 {
-  background-color: green;
+  /* background-color: green; */
   width: 175px;
   height: 75px;
 }

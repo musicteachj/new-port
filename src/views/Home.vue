@@ -1,11 +1,13 @@
 <template>
   <div id="home">
      <v-card
+      flat
       id="top">
       <Top />
     </v-card>
 
     <v-card
+      flat
       id="bottom">
       <Bottom />
     </v-card>
