@@ -5,7 +5,7 @@
     </v-row>
     <v-row class="justify-center" style="background-color:blue">
 
-      <!-- <v-card v-for="(p, index) in projects" :key="index" class="mx-auto mt-8 mb-8"
+      <v-card v-for="(p, index) in projects" :key="index" class="mx-auto mt-8 mb-8"
             max-width="374">
          <v-img
           class="white--text"
@@ -65,7 +65,7 @@
             Demo
           </v-btn>
         </v-card-actions>
-      </v-card> -->
+      </v-card>
     </v-row>
   </div>
 </template>
