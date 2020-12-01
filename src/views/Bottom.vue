@@ -71,7 +71,7 @@
       <v-card
         v-for="(p, index) in projects" 
         :key="index"
-        class="mx-auto my-12"
+        class="mx-auto my-12x"
         max-width="374"
       >
         <v-img
@@ -79,11 +79,13 @@
           :src="p.img"
         ></v-img>
         
-        <v-card-title>{{p.name}}</v-card-title>
+        <v-card-title class="text-center">
+          <p class="text-center">{{p.name}}
+            </p></v-card-title>
          
         
 
-        <v-card-text>
+        <v-card-text class="">
           <!-- <v-row
             align="center"
             class="mx-0"
@@ -140,23 +142,23 @@
             Reserve
           </v-btn>
         </v-card-actions> -->
-        <v-card-actions>
-          <v-tooltip :color="p.color" top v-if="p.collaboration">
+        <v-card-actions class="align-self-end">
+          <v-tooltip class="actionz" :color="p.color" top v-if="p.collaboration">
             <template v-slot:activator="{ on }">
               <v-icon class="actionz" :color="p.color" dark v-on="on">mdi-account-multiple</v-icon>
             </template>
             <span>Collaboration</span>
           </v-tooltip>
-           <v-tooltip :color="p.color" top v-else>
+           <v-tooltip class="actionz" :color="p.color" top v-else>
             <template v-slot:activator="{ on }">
-              <v-icon class="actionz" :color="p.color" dark v-on="on">mdi-account</v-icon>
+              <v-icon :color="p.color" dark v-on="on">mdi-account</v-icon>
             </template>
             <span>Individual</span>
           </v-tooltip>
           
           <div class="flex-grow-1"></div>
           <v-btn
-            class="demo"
+            class="code"
             v-if="index > 1"
             text
             :color="p.color"
@@ -165,7 +167,7 @@
             Code
           </v-btn>
           <v-btn
-            class="code"
+            class="demo"
             text
             :color="p.color"
             :href="p.demo"
@@ -288,21 +290,21 @@ td, th {
   border-bottom: 1px solid white !important;
 }
 
-.actionz {
-  bottom: 10 !important;
-  left: 10 !important;
+/* .actionz {
+  bottom: 0 !important;
+  left: 10px !important;
+  position: absolute;
+} */
+
+/* .demo {
+  bottom: 0px !important;
+  right: 0px !important;
   position: absolute;
 }
 
 .code {
-  bottom: 0 !important;
-  right: 0 !important;
-  position: absolute;
-}
-
-.demo {
-  bottom: 0 !important;
+  bottom: 0px !important;
   right: 70px !important;
   position: absolute;
-}
+} */
 </style>
