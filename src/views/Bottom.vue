@@ -1,9 +1,9 @@
 <template>
-  <div id="bottomComp" style="background-color:green">
-    <v-row class="justify-center" style="background-color:green">
+  <div id="bottomComp">
+    <v-row class="justify-center mb-12">
       <h1>Projects</h1>
     </v-row>
-    <v-row class="justify-center ml-10 mr-10" style="background-color:blue">
+    <v-row class="justify-center ml-10 mr-10 mb-12">
       <!-- <v-card 
         v-for="(p, index) in projects" 
         :key="index" 
@@ -71,8 +71,14 @@
       <v-card
         v-for="(p, index) in projects" 
         :key="index"
-        class="mx-auto my-12x"
+        class="mx-auto my-12x d-flex"
         max-width="374"
+      >
+
+      <v-card
+        class="align-self-stretch"
+        outlined
+        tile
       >
         <v-img
           height="200"
@@ -81,40 +87,15 @@
         
         <v-card-title class="text-center">
           <p class="text-center">{{p.name}}
-            </p></v-card-title>
+        </p></v-card-title>
          
-        
-
         <v-card-text class="">
-          <!-- <v-row
-            align="center"
-            class="mx-0"
-          >
-            <v-rating
-              :value="4.5"
-              color="amber"
-              dense
-              half-increments
-              readonly
-              size="14"
-            ></v-rating>
-
-            <div class="grey--text ml-4">4.5 (413)</div>
-          </v-row> -->
-
-          <!-- <div class="my-4 subtitle-1">
-            $ • Italian, Cafe
-          </div> -->
-
-        <div>{{p.text}}</div>
+          <div>{{p.text}}</div>
         </v-card-text>
 
         <v-divider class="mx-4"></v-divider>
 
-        <!-- <v-card-title>Tonight's availability</v-card-title> -->
-
         <v-card-text class="text-center">
-          <!-- <v-chip-group> -->
            <v-chip
             text-color="white"
             :color="p.color"
@@ -123,40 +104,40 @@
             class="ma-2">
             {{t}}
           </v-chip>
-            <!-- <v-chip>5:30PM</v-chip>
-
-            <v-chip>7:30PM</v-chip>
-
-            <v-chip>8:00PM</v-chip>
-
-            <v-chip>9:00PM</v-chip> -->
-          <!-- </v-chip-group> -->
         </v-card-text>
 
-        <!-- <v-card-actions>
-          <v-btn
-            color="deep-purple lighten-2"
-            text
-            class="demo"
+         <v-divider class="mx-4"></v-divider>
+
+        <v-card-text class="text-center">
+          <v-btn 
+            icon 
+            :color="p.color"
+            v-for="s in p.screenSizes"
+            :key="s"
+            class="ma-2"
           >
-            Reserve
+            <v-icon>{{s}}</v-icon>
           </v-btn>
-        </v-card-actions> -->
+        </v-card-text>
+
         <v-card-actions class="align-self-end">
-          <v-tooltip class="actionz" :color="p.color" top v-if="p.collaboration">
+          <v-tooltip :color="p.color" top v-if="p.collaboration">
             <template v-slot:activator="{ on }">
-              <v-icon class="actionz" :color="p.color" dark v-on="on">mdi-account-multiple</v-icon>
+              <v-btn class="actionz" icon v-on="on" :color="p.color">
+                <v-icon>mdi-account-multiple</v-icon>
+              </v-btn>
             </template>
             <span>Collaboration</span>
           </v-tooltip>
            <v-tooltip class="actionz" :color="p.color" top v-else>
             <template v-slot:activator="{ on }">
-              <v-icon :color="p.color" dark v-on="on">mdi-account</v-icon>
+              <v-btn class="actionz" icon v-on="on" :color="p.color">
+                <v-icon class="actionz" dark>mdi-account</v-icon>
+              </v-btn>
             </template>
             <span>Individual</span>
           </v-tooltip>
-          
-          <div class="flex-grow-1"></div>
+
           <v-btn
             class="code"
             v-if="index > 1"
@@ -176,6 +157,11 @@
           </v-btn>
         </v-card-actions>
       </v-card>
+
+
+       
+      </v-card>
+
     </v-row>
   </div>
 </template>
@@ -199,7 +185,8 @@ export default class Bottom extends Vue {
     {
       name: "Barcode Gen", 
       color: "#323EA0", 
-      img: BarcodeGen, 
+      img: BarcodeGen,
+      screenSizes: ["mdi-cellphone", "mdi-tablet-ipad", "mdi-laptop", "mdi-monitor"],
       text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.",
       tech: ["HTML", "CSS", "JavaScript", "TypeScript", "Vuetify", "Vue.js", "Vuex", "Vue-Router", "Node.js", "Express.js", "MongoDB"],
       demo: "https://thegreatdb8.herokuapp.com/", code: "https://github.com/jliip51/The-Great-Debate", 
@@ -208,7 +195,8 @@ export default class Bottom extends Vue {
     {
       name: "One Website", 
       color: "#453C41", 
-      img: GreatDebateImg, 
+      img: GreatDebateImg,
+      screenSizes: ["mdi-cellphone", "mdi-tablet-ipad", "mdi-laptop", "mdi-monitor"],
       text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.", 
       tech: ["HTML", "CSS", "JavaSCript", "TypeScript", "Vuetify", "Vue"], 
       demo: "https://thegreatdb8.herokuapp.com/", 
@@ -218,7 +206,8 @@ export default class Bottom extends Vue {
     {
       name: "Two Website", 
       color: "#453C41", 
-      img: GreatDebateImg, 
+      img: GreatDebateImg,
+      screenSizes: ["mdi-cellphone", "mdi-tablet-ipad", "mdi-laptop", "mdi-monitor"],
       text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.", 
       tech: ["HTML", "CSS", "JavaSCript", "TypeScript", "Vuetify", "Vue"], 
       demo: "https://thegreatdb8.herokuapp.com/", 
@@ -228,7 +217,8 @@ export default class Bottom extends Vue {
     {
       name: "Carlos San Francisco", 
       color: "#B30101", 
-      img: CarlosImg, 
+      img: CarlosImg,
+      screenSizes: ["mdi-laptop", "mdi-monitor"],
       text: "A web game inspired by Carmen Sandiego. The user must use clues given to them in the form of pictures taken around the world (Flickr API) and various facts given to them (CIA world fact book API) to try and track down the criminal on the world map before time runs out.", 
       tech: ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap", "Firebase", "Flickr API"], 
       demo: "https://carltheape.github.io/carlosSanFrancisco/", 
@@ -238,7 +228,8 @@ export default class Bottom extends Vue {
     {
       name: "The Great Debate", 
       color: "#453C41", 
-      img: GreatDebateImg, 
+      img: GreatDebateImg,
+      screenSizes: ["mdi-laptop", "mdi-monitor"],
       text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.", 
       tech: ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap", "Handlebars.js", "Node.js", "Express.js", "MySQL"], 
       demo: "https://thegreatdb8.herokuapp.com/", 
@@ -290,13 +281,13 @@ td, th {
   border-bottom: 1px solid white !important;
 }
 
-/* .actionz {
-  bottom: 0 !important;
-  left: 10px !important;
+.actionz {
+  bottom: 0px !important;
+  left: 0px !important;
   position: absolute;
-} */
+}
 
-/* .demo {
+.demo {
   bottom: 0px !important;
   right: 0px !important;
   position: absolute;
@@ -306,5 +297,5 @@ td, th {
   bottom: 0px !important;
   right: 70px !important;
   position: absolute;
-} */
+}
 </style>
