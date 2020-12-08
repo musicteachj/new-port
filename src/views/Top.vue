@@ -138,7 +138,15 @@
         <v-row class="ml-3 mr-3 justify-center" >
           <div class="divIt2 text-center">
             <transition name="nameNew">
-            <v-btn v-if="showBtn" color="primary" class="mt-6">Projects</v-btn>
+            <v-btn 
+              v-if="showBtn" 
+              ref="button" 
+              color="primary" 
+              class="mt-6"
+              @click="$vuetify.goTo(element, options)"
+            >
+              Projects
+            </v-btn>
           </transition>
           </div>
           
@@ -147,12 +155,15 @@
       </v-col>
     </v-card>
     
+   <p class="target" ref="target"></p>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import Component from 'vue-class-component';
+import * as easings from 'vuetify/es5/services/goto/easing-patterns'
+
 // import { set } from 'vue/types/umd';
 
 import HTML5 from '@/assets/techIcons/html-5-icon.png';
@@ -264,6 +275,21 @@ export default class Top extends Vue {
 
     return "h1"
 
+  }
+
+  get options() {
+    return {
+      duration: 1000,
+      offset: -50,
+      easing: 'easeInOutCubic',
+      type: 'number',
+      number: 9999,
+      easings: Object.keys(easings)
+    }
+  }
+
+  get element () {
+    return this.$refs.target
   }
 
   // EVENTS ---------------------------
