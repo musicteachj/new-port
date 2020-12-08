@@ -188,7 +188,7 @@ export default class Top extends Vue {
   showName = false;
   showBtn = false;
 
-  frontTech: any = [
+  frontTech: any[] = [
     {show: false, id: 1, tech: "HTML", img: HTML5, color: "#D1382B"},
     {show: false, id: 2, tech: "CSS", img: CSS3, color: "#0277BC"},
     {show: false, id: 3, tech: "Sass", img: SASS, color: "#CF649A"},
@@ -196,20 +196,20 @@ export default class Top extends Vue {
     {show: false, id: 5, tech: "Vuetify", img: VUETIFY, color: "#1697F6"},
   ]
 
-  backTech: any = [
+  backTech: any[] = [
     {show: false, id: 1, tech: "JavaScript", img: JAVASCRIPT, color: "#F7DF1E"},
     {show: false, id: 2, tech: "TypeScript", img: TYPESCRIPT, color: "#007ACC"},
-    {show: false, id: 3, tech: "Express", img: EXPRESS, color: "#007ACC"},
+    {show: false, id: 3, tech: "Express.js", img: EXPRESS, color: "#007ACC"},
     {show: false, id: 4, tech: "GraphQL", img: GRAPHQL, color: "#007ACC"},
     {show: false, id: 5, tech: "MongoDB", img: MONGODB, color: "#4CAF50"},
-    {show: false, id: 6, tech: "Vue", img: VUE, color: "#41B883"},
-    {show: false, id: 7, tech: "React", img: REACT, color: "#292929"},
+    {show: false, id: 6, tech: "Vue.js", img: VUE, color: "#41B883"},
+    {show: false, id: 7, tech: "React.js", img: REACT, color: "#292929"},
     {show: false, id: 8, tech: "Vuex", img: VUEX, color: "#292929"},
-    {show: false, id: 9, tech: "Node", img: NODE, color: "#8BC500"},
+    {show: false, id: 9, tech: "Node.js", img: NODE, color: "#8BC500"},
     {show: false, id: 10, tech: "Hasura", img: HASURA, color: "#8BC500"},
   ]
 
-  otherTech: any = [
+  otherTech: any[] = [
     {show: false, id: 1, tech: "Git", img: GIT, color: "#F05033"},
     {show: false, id: 2, tech: "Github", img: GITHUB, color: "#008DD2"},
     {show: false, id: 3, tech: "BitBucket", img: BITBUCKET, color: "#205081"},
