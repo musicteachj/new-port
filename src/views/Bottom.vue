@@ -1,7 +1,7 @@
 <template>
   <div id="bottomComp">
     <v-row class="justify-center mb-12">
-      <h1>Projects</h1>
+      <h1 class="text-h1">Projects</h1>
     </v-row>
     <v-row class="justify-center ml-10 mr-10 mb-12">
       <!-- <v-card 
@@ -68,99 +68,104 @@
         </v-card-actions>
       </v-card> -->
 
-      <v-card
-        v-for="(p, index) in projects" 
+    <v-hover
+        v-slot:default="{ hover }"
+         v-for="(p, index) in projects" 
         :key="index"
+      >
+      <v-card
+        :elevation="hover ? 12 : 4"
+       
         class="mx-auto my-12x d-flex"
         max-width="374"
       >
 
-      <v-card
-        class="align-self-stretch"
-        outlined
-        tile
-      >
-        <v-img
-          height="200"
-          :src="p.img"
-        ></v-img>
-        
-        <v-card-title class="text-center">
-          <p class="text-center">{{p.name}}
-        </p></v-card-title>
-         
-        <v-card-text class="">
-          <div>{{p.text}}</div>
-        </v-card-text>
+        <v-card
+          class="align-self-stretch"
+          outlined
+          tile
+        >
+          <v-img
+            height="200"
+            :src="p.img"
+            class="mb-4"
+          ></v-img>
+          
+            <p class="text-center font-weight-bold text-h5">{{p.name}}</p>
+          
+          <v-card-text class="text-center">
+            <p class="text--primary body-1">{{p.text}}</p>
+          </v-card-text>
 
-        <v-divider class="mx-4"></v-divider>
+          <v-divider class="mx-4"></v-divider>
 
-        <v-card-text class="text-center">
-           <v-chip
-            text-color="white"
-            :color="p.color"
-            v-for="t in p.tech"
-            :key="t"
-            class="ma-2">
-            {{t}}
-          </v-chip>
-        </v-card-text>
+          <v-card-text class="text-center">
+            <v-chip
+              text-color="white"
+              :color="p.color"
+              v-for="t in p.tech"
+              :key="t"
+              class="ma-2">
+              {{t}}
+            </v-chip>
+          </v-card-text>
 
-         <v-divider class="mx-4"></v-divider>
+          <v-divider class="mx-4"></v-divider>
 
-        <v-card-text class="text-center">
-          <v-btn 
-            icon 
-            :color="p.color"
-            v-for="s in p.screenSizes"
-            :key="s"
-            class="ma-2"
-          >
-            <v-icon>{{s}}</v-icon>
-          </v-btn>
-        </v-card-text>
+          <v-card-text class="text-center">
+            <v-btn 
+              icon 
+              :color="p.color"
+              v-for="s in p.screenSizes"
+              :key="s"
+              class="ma-2"
+            >
+              <v-icon>{{s}}</v-icon>
+            </v-btn>
+          </v-card-text>
 
-        <v-card-actions class="align-self-end">
-          <v-tooltip :color="p.color" top v-if="p.collaboration">
-            <template v-slot:activator="{ on }">
-              <v-btn class="actionz" icon v-on="on" :color="p.color">
-                <v-icon>mdi-account-multiple</v-icon>
-              </v-btn>
-            </template>
-            <span>Collaboration</span>
-          </v-tooltip>
-           <v-tooltip class="actionz" :color="p.color" top v-else>
-            <template v-slot:activator="{ on }">
-              <v-btn class="actionz" icon v-on="on" :color="p.color">
-                <v-icon class="actionz" dark>mdi-account</v-icon>
-              </v-btn>
-            </template>
-            <span>Individual</span>
-          </v-tooltip>
+          <v-card-actions class="align-self-end">
+            <v-tooltip :color="p.color" top v-if="p.collaboration">
+              <template v-slot:activator="{ on }">
+                <v-btn class="actionz" icon v-on="on" :color="p.color">
+                  <v-icon>mdi-account-multiple</v-icon>
+                </v-btn>
+              </template>
+              <span>Collaboration</span>
+            </v-tooltip>
+            <v-tooltip class="actionz" :color="p.color" top v-else>
+              <template v-slot:activator="{ on }">
+                <v-btn class="actionz" icon v-on="on" :color="p.color">
+                  <v-icon class="actionz" dark>mdi-account</v-icon>
+                </v-btn>
+              </template>
+              <span>Individual</span>
+            </v-tooltip>
 
-          <v-btn
-            class="code"
-            v-if="index > 1"
-            text
-            :color="p.color"
-            :href="p.code"
-            target="_blank">
-            Code
-          </v-btn>
-          <v-btn
-            class="demo"
-            text
-            :color="p.color"
-            :href="p.demo"
-            target="_blank">
-            Demo
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+            <v-btn
+              class="code"
+              v-if="index > 1"
+              text
+              :color="p.color"
+              :href="p.code"
+              target="_blank">
+              Code
+            </v-btn>
+            <v-btn
+              class="demo"
+              text
+              :color="p.color"
+              :href="p.demo"
+              target="_blank">
+              Demo
+            </v-btn>
+          </v-card-actions>
+        </v-card>
 
 
        
       </v-card>
+      </v-hover>
 
     </v-row>
   </div>
@@ -192,28 +197,28 @@ export default class Bottom extends Vue {
       demo: "https://thegreatdb8.herokuapp.com/", code: "https://github.com/jliip51/The-Great-Debate", 
       collaboration: false
     },
-    {
-      name: "One Website", 
-      color: "#453C41", 
-      img: GreatDebateImg,
-      screenSizes: ["mdi-cellphone", "mdi-tablet-ipad", "mdi-laptop", "mdi-monitor"],
-      text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.", 
-      tech: ["HTML", "CSS", "JavaSCript", "TypeScript", "Vuetify", "Vue"], 
-      demo: "https://thegreatdb8.herokuapp.com/", 
-      code: "https://github.com/jliip51/The-Great-Debate", 
-      collaboration: false
-    },
-    {
-      name: "Two Website", 
-      color: "#453C41", 
-      img: GreatDebateImg,
-      screenSizes: ["mdi-cellphone", "mdi-tablet-ipad", "mdi-laptop", "mdi-monitor"],
-      text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.", 
-      tech: ["HTML", "CSS", "JavaSCript", "TypeScript", "Vuetify", "Vue"], 
-      demo: "https://thegreatdb8.herokuapp.com/", 
-      code: "https://github.com/jliip51/The-Great-Debate", 
-      collaboration: false
-    },
+    // {
+    //   name: "One Website", 
+    //   color: "#453C41", 
+    //   img: GreatDebateImg,
+    //   screenSizes: ["mdi-cellphone", "mdi-tablet-ipad", "mdi-laptop", "mdi-monitor"],
+    //   text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.", 
+    //   tech: ["HTML", "CSS", "JavaSCript", "TypeScript", "Vuetify", "Vue"], 
+    //   demo: "https://thegreatdb8.herokuapp.com/", 
+    //   code: "https://github.com/jliip51/The-Great-Debate", 
+    //   collaboration: false
+    // },
+    // {
+    //   name: "Two Website", 
+    //   color: "#453C41", 
+    //   img: GreatDebateImg,
+    //   screenSizes: ["mdi-cellphone", "mdi-tablet-ipad", "mdi-laptop", "mdi-monitor"],
+    //   text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.", 
+    //   tech: ["HTML", "CSS", "JavaSCript", "TypeScript", "Vuetify", "Vue"], 
+    //   demo: "https://thegreatdb8.herokuapp.com/", 
+    //   code: "https://github.com/jliip51/The-Great-Debate", 
+    //   collaboration: false
+    // },
     {
       name: "Carlos San Francisco", 
       color: "#B30101", 
@@ -229,7 +234,7 @@ export default class Bottom extends Vue {
       name: "The Great Debate", 
       color: "#453C41", 
       img: GreatDebateImg,
-      screenSizes: ["mdi-laptop", "mdi-monitor"],
+      screenSizes: ["mdi-laptop"],
       text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.", 
       tech: ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap", "Handlebars.js", "Node.js", "Express.js", "MySQL"], 
       demo: "https://thegreatdb8.herokuapp.com/", 
@@ -282,19 +287,19 @@ td, th {
 }
 
 .actionz {
-  bottom: 0px !important;
-  left: 0px !important;
+  bottom: 3px !important;
+  left: 2px !important;
   position: absolute;
 }
 
 .demo {
-  bottom: 0px !important;
+  bottom: 3px !important;
   right: 0px !important;
   position: absolute;
 }
 
 .code {
-  bottom: 0px !important;
+  bottom: 3px !important;
   right: 70px !important;
   position: absolute;
 }
