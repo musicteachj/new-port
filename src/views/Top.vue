@@ -160,9 +160,10 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
+// import Vue from 'vue';
+import Component, { mixins } from 'vue-class-component';
 import * as easings from 'vuetify/es5/services/goto/easing-patterns'
+import Styling from "@/mixins/Styling.vue";
 
 // import { set } from 'vue/types/umd';
 
@@ -190,7 +191,7 @@ import JIRA from '@/assets/techIcons/jira.png';
 import AZURE from '@/assets/techIcons/azure.png';
 
 @Component({})
-export default class Top extends Vue {
+export default class Top extends mixins(Styling) {
   // LOCAL VARIABLES ------------------
    window: any = {
     width: 0,
@@ -250,32 +251,32 @@ export default class Top extends Vue {
   // ]
 
   // COMPUTED -------------------------
-  get nameFontSize() {
-    // if (this.window.width <= 600) {
-    //   return "h1"
-    // }
+  // get nameFontSize() {
+  //   // if (this.window.width <= 600) {
+  //   //   return "h1"
+  //   // }
 
-    // if (this.window.width >= 601 && this.window.width <= 960) {
-    //   return "caption"
-    // }
+  //   // if (this.window.width >= 601 && this.window.width <= 960) {
+  //   //   return "caption"
+  //   // }
 
-    // if (this.window.width >= 961 && this.window.width <= 1264) {
-    //   return "h1"
-    // }
+  //   // if (this.window.width >= 961 && this.window.width <= 1264) {
+  //   //   return "h1"
+  //   // }
 
-    // if (this.window.width >= 1265 && this.window.width <= 1904) {
-    //   return "caption"
-    // }
+  //   // if (this.window.width >= 1265 && this.window.width <= 1904) {
+  //   //   return "caption"
+  //   // }
 
-    // if (this.window.width >= 1905) {
-    //   return "h1"
-    // }
+  //   // if (this.window.width >= 1905) {
+  //   //   return "h1"
+  //   // }
 
-    // return ""
+  //   // return ""
 
-    return "h1"
+  //   return "h1"
 
-  }
+  // }
 
   get options() {
     return {
