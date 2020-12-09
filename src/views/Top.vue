@@ -10,7 +10,7 @@
        <v-row class="ml-3 mr-3 mb-16 justify-center">
           <transition name="name">
             <!-- <p v-if="showName" :class="`text-${nameFontSize}`">{{window.width}}</p> -->
-            <p v-if="showName" :class="`text-${nameFontSize}`">James Littlefield</p>
+            <p v-if="showName" :class="`text-${nameFontSize} font-weight-light`">James Littlefield</p>
 
           </transition>
         </v-row>
