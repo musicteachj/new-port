@@ -5,6 +5,12 @@ import Component from 'vue-class-component';
 @Component
 export default class Styling extends Vue {
 
+  // LOCAL VARIABLES ------------------
+   window: any = {
+    width: 0,
+    height: 0
+  };
+
   // COMPUTED -------------------------
   get nameFontSize() {
     switch (this.$vuetify.breakpoint.name) {
@@ -17,6 +23,44 @@ export default class Styling extends Vue {
     }
   }
 
+  get cardDim() {
+    switch (this.$vuetify.breakpoint.name) {
+      case 'xs': return '55';
+      case 'sm': return '55';
+      case 'md': return '60';
+      case 'lg': return '95';
+      case 'xl': return '95';
+      default: return '95';
+    }
+  }
+
+  get newTopTop() {
+    switch (this.$vuetify.breakpoint.name) {
+      case 'xs': return (this.window.height / 2) - 100;
+      case 'sm': return this.window.height / 2;
+      case 'md': return this.window.height / 2;
+      case 'lg': return this.window.height / 2;
+      case 'xl': return this.window.height / 2;
+      default: return this.window.height / 2;
+    }
+  }
+
+  // get iconContainerDiv() {
+  //   let changeDiv: any = {
+  //     background-color: green;
+  // width: 95px;
+  // height: 95px;
+  //   };
+  //   switch (this.$vuetify.breakpoint.name) {
+  //     case 'xs': return 'h4';
+  //     case 'sm': return 'h3';
+  //     case 'md': return 'h2';
+  //     case 'lg': return 'h1';
+  //     case 'xl': return 'h1';
+  //     default: return 'h1';
+  //   }
+  // }
+
   get projectsText() {
     switch (this.$vuetify.breakpoint.name) {
       case 'xs': return 'h4';
@@ -26,6 +70,22 @@ export default class Styling extends Vue {
       case 'xl': return 'h1';
       default: return 'h1';
     }
+  }
+
+  // LIFECYCLE EVENTS -----------------
+  created() {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize();
+  }
+
+  destroyed() {
+    window.removeEventListener('resize', this.handleResize)
+  }
+
+  // METHODS --------------------------
+  handleResize() {
+    this.window.width = window.innerWidth;
+    this.window.height = window.innerHeight;
   }
 }
 </script>

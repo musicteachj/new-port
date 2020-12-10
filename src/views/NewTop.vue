@@ -2,13 +2,13 @@
   <div id="topComp">
     <v-card 
       id="topOneCard"
-      :height="window.height / 2"
+      :height="newTopTop"
       :width="window.width"
       flat
       class="d-flex align-content-end flex-wrap"
-      style="background-color:green">
+      style="background-color:orange">
       <v-col cols="12">
-        <v-row class="ml-3 mr-3 mb-16 justify-center">
+        <v-row class="ml-3 mr-3 justify-center">
           <transition name="name">
             <!-- <p v-if="showName" :class="`text-${nameFontSize}`">{{window.width}}</p> -->
             <p v-if="showName" :class="`text-${nameFontSize} font-weight-light`">James Littlefield</p>
@@ -173,7 +173,7 @@ import JIRA from '@/assets/techIcons/jira.png';
 import AZURE from '@/assets/techIcons/azure.png';
 
 @Component({})
-export default class Top extends mixins(Styling) {
+export default class NewTop extends mixins(Styling) {
   // LOCAL VARIABLES ------------------
    window: any = {
     width: 0,
