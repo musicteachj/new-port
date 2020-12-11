@@ -25,9 +25,9 @@ export default class Styling extends Vue {
 
   get cardDim() {
     switch (this.$vuetify.breakpoint.name) {
-      case 'xs': return '55';
-      case 'sm': return '55';
-      case 'md': return '60';
+      case 'xs': return '60';
+      case 'sm': return '60';
+      case 'md': return '80';
       case 'lg': return '95';
       case 'xl': return '95';
       default: return '95';
@@ -36,11 +36,22 @@ export default class Styling extends Vue {
 
   get newTopTop() {
     switch (this.$vuetify.breakpoint.name) {
-      case 'xs': return (this.window.height / 2) - 100;
-      case 'sm': return this.window.height / 2;
-      case 'md': return this.window.height / 2;
-      case 'lg': return this.window.height / 2;
-      case 'xl': return this.window.height / 2;
+      case 'xs': return (this.window.height / 2) - 200;
+      case 'sm': return (this.window.height / 2) - 100;
+      case 'md': return (this.window.height / 2) - 150;
+      case 'lg': return (this.window.height / 2) - 200;
+      case 'xl': return (this.window.height / 2) - 200;
+      default: return this.window.height / 2;
+    }
+  }
+
+  get newTopBottom() {
+    switch (this.$vuetify.breakpoint.name) {
+      case 'xs': return (this.window.height / 2) + 200;
+      case 'sm': return (this.window.height / 2) + 100;
+      case 'md': return (this.window.height / 2) + 150;
+      case 'lg': return (this.window.height / 2) + 200;
+      case 'xl': return (this.window.height / 2) + 200;
       default: return this.window.height / 2;
     }
   }

@@ -6,7 +6,7 @@
       :width="window.width"
       flat
       class="d-flex align-content-end flex-wrap"
-      style="background-color:orange">
+    >
       <v-col cols="12">
         <v-row class="ml-3 mr-3 justify-center">
           <transition name="name">
@@ -20,7 +20,7 @@
     <v-card
       flat
       id="topTwoCard"
-      :height="window.height / 2"
+      :height="newTopBottom"
       :width="window.width"
       class="d-flex align-content-start flex-wrap"
     >
@@ -123,7 +123,10 @@
         <v-row class="ml-3 mr-3 justify-center" >
           <div class="divIt2 text-center">
             <transition name="nameNew">
-            <v-btn 
+            <v-btn
+              :small="this.$vuetify.breakpoint.smAndDown"
+              :large="this.$vuetify.breakpoint.name === 'lg'"
+              :x-large="this.$vuetify.breakpoint.name === 'xl'"
               v-if="showBtn" 
               ref="button" 
               color="primary" 
@@ -263,7 +266,7 @@ export default class NewTop extends mixins(Styling) {
   get options() {
     return {
       duration: 1000,
-      offset: -50,
+      // offset: -50,
       easing: 'easeInOutCubic',
       type: 'number',
       number: 9999,
@@ -483,14 +486,14 @@ export default class NewTop extends mixins(Styling) {
   border: 1px solid black;
 } */
 
-.divIt {
+/* .divIt {
   background-color: green;
   width: 95px;
   height: 95px;
-}
+} */
 
 .divIt2 {
-  background-color: blue;
+  /* background-color: blue; */
   width: 175px;
   height: 75px;
 }

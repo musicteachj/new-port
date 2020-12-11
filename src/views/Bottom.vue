@@ -76,7 +76,7 @@
       <v-card
         :elevation="hover ? 12 : 4"
        
-        class="mx-auto my-12x d-flex"
+        class="mx-auto my-12x d-flex mb-12"
         max-width="360"
       >
 
