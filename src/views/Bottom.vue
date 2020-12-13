@@ -1,7 +1,7 @@
 <template>
   <div id="bottomComp">
     <v-row class="justify-center mb-12">
-      <h1 class="text-h1">Projects</h1>
+      <h1 :class="`text-${projectsText}`">Projects</h1>
     </v-row>
     <v-row class="justify-center ml-10 mr-10 mb-12">
       <!-- <v-card 
@@ -76,8 +76,8 @@
       <v-card
         :elevation="hover ? 12 : 4"
        
-        class="mx-auto my-12x d-flex"
-        max-width="374"
+        class="mx-auto my-12x d-flex mb-12"
+        max-width="360"
       >
 
         <v-card
@@ -173,7 +173,9 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Component from 'vue-class-component';
+import Component, { mixins } from 'vue-class-component';
+import Styling from "@/mixins/Styling.vue";
+
 
 import CarlosImg from '@/assets/cardAssets/carlos.png';
 import GreatDebateImg from '@/assets/cardAssets/greatDebate.png';
@@ -184,7 +186,7 @@ import BarcodeGen from '@/assets/cardAssets/barcodeGen.png';
 // const GreatDebate = require('@/assets/greatDebate.png');
 
 @Component({})
-export default class Bottom extends Vue {
+export default class Bottom extends mixins(Styling) {
 
   projects: Array<object> = [
     {
