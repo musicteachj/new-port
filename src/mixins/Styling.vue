@@ -12,6 +12,7 @@ export default class Styling extends Vue {
   };
 
   // COMPUTED -------------------------
+  // ---  TOP ---
   get nameFontSize() {
     switch (this.$vuetify.breakpoint.name) {
       case 'xs': return 'h4';
@@ -56,22 +57,7 @@ export default class Styling extends Vue {
     }
   }
 
-  // get iconContainerDiv() {
-  //   let changeDiv: any = {
-  //     background-color: green;
-  // width: 95px;
-  // height: 95px;
-  //   };
-  //   switch (this.$vuetify.breakpoint.name) {
-  //     case 'xs': return 'h4';
-  //     case 'sm': return 'h3';
-  //     case 'md': return 'h2';
-  //     case 'lg': return 'h1';
-  //     case 'xl': return 'h1';
-  //     default: return 'h1';
-  //   }
-  // }
-
+  // --- BOTTOM ---
   get projectsText() {
     switch (this.$vuetify.breakpoint.name) {
       case 'xs': return 'h4';
@@ -80,6 +66,28 @@ export default class Styling extends Vue {
       case 'lg': return 'h1';
       case 'xl': return 'h1';
       default: return 'h1';
+    }
+  }
+
+  get cardWidth() {
+    switch (this.$vuetify.breakpoint.name) {
+      case 'xs': return '360';
+      case 'sm': return '360';
+      case 'md': return '360';
+      case 'lg': return '400';
+      case 'xl': return '400';
+      default: return '360';
+    }
+  }
+
+  get projectName() {
+    switch (this.$vuetify.breakpoint.name) {
+      case 'xs': return 'h5';
+      case 'sm': return 'h4';
+      case 'md': return 'h4';
+      case 'lg': return 'h4';
+      case 'xl': return 'h4';
+      default: return 'h4';
     }
   }
 
