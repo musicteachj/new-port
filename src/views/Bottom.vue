@@ -11,7 +11,7 @@
       >
         <v-card
           :elevation="hover ? 12 : 4"
-          class="mx-auto d-flex mb-12 ml-6 mr-6"
+          class="mx-auto d-flex mb-12 ml-8 mr-8"
           :max-width="cardWidth"
         >
           <v-card
@@ -22,13 +22,13 @@
             <v-img
               height="200"
               :src="p.img"
-              class="mb-4"
+              class="mb-4 img"
             ></v-img>
             
             <p :class="`text-center font-weight-normal text-${projectName}`">{{p.name}}</p>
             
             <v-card-text class="text-center">
-              <p class="text--primary body-1">{{p.text}}</p>
+              <p :class="`text--primary text-${projectText} font-weight-${projectTextWeight}`">{{p.text}}</p>
             </v-card-text>
 
             <v-divider class="mx-4"></v-divider>
@@ -129,28 +129,39 @@ export default class Bottom extends mixins(Styling) {
       demo: "https://thegreatdb8.herokuapp.com/", code: "https://github.com/jliip51/The-Great-Debate", 
       collaboration: false
     },
-    {
-      name: "Menu Creator", 
-      color: "#1B5E20", 
-      img: GreatDebateImg,
-      screenSizes: ["mdi-cellphone", "mdi-tablet-ipad", "mdi-laptop", "mdi-monitor"],
-      text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.", 
-      tech: ["HTML", "CSS", "JavaSCript", "TypeScript", "Bootstrap", "React.js", "Elixir", "MySQL"], 
-      demo: "https://thegreatdb8.herokuapp.com/", 
-      code: "https://github.com/jliip51/The-Great-Debate", 
-      collaboration: false
-    },
-    {
-      name: "Music Calendar", 
-      color: "#4E342E", 
-      img: GreatDebateImg,
-      screenSizes: ["mdi-cellphone", "mdi-tablet-ipad", "mdi-laptop", "mdi-monitor"],
-      text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.", 
-      tech: ["HTML", "CSS", "JavaSCript", "TypeScript", "Vuetify", "Vue.js", "GraphQL", "Postgres"], 
-      demo: "https://thegreatdb8.herokuapp.com/", 
-      code: "https://github.com/jliip51/The-Great-Debate", 
-      collaboration: false
-    },
+    // {
+    //   name: "Menu Creator", 
+    //   color: "#1B5E20", 
+    //   img: GreatDebateImg,
+    //   screenSizes: ["mdi-cellphone", "mdi-tablet-ipad", "mdi-laptop", "mdi-monitor"],
+    //   text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.", 
+    //   tech: ["HTML", "CSS", "JavaSCript", "TypeScript", "Bootstrap", "React.js", "Elixir", "MySQL"], 
+    //   demo: "https://thegreatdb8.herokuapp.com/", 
+    //   code: "https://github.com/jliip51/The-Great-Debate", 
+    //   collaboration: false
+    // },
+    // {
+    //   name: "Music Calendar", 
+    //   color: "#4E342E", 
+    //   img: GreatDebateImg,
+    //   screenSizes: ["mdi-cellphone", "mdi-tablet-ipad", "mdi-laptop", "mdi-monitor"],
+    //   text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.", 
+    //   tech: ["HTML", "CSS", "JavaSCript", "TypeScript", "Vuetify", "Vue.js", "GraphQL", "Postgres"], 
+    //   demo: "https://thegreatdb8.herokuapp.com/", 
+    //   code: "https://github.com/jliip51/The-Great-Debate", 
+    //   collaboration: false
+    // },
+    // {
+    //   name: "Jam Book", 
+    //   color: "#4E342E", 
+    //   img: GreatDebateImg,
+    //   screenSizes: ["mdi-cellphone", "mdi-tablet-ipad", "mdi-laptop", "mdi-monitor"],
+    //   text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.", 
+    //   tech: ["HTML", "CSS", "JavaSCript", "TypeScript", "React.js", "Express.js", "MongoDB"], 
+    //   demo: "https://thegreatdb8.herokuapp.com/", 
+    //   code: "https://github.com/jliip51/The-Great-Debate", 
+    //   collaboration: false
+    // },
     {
       name: "Carlos San Francisco", 
       color: "#B30101", 

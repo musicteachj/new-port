@@ -71,7 +71,7 @@ export default class Styling extends Vue {
 
   get cardWidth() {
     switch (this.$vuetify.breakpoint.name) {
-      case 'xs': return '360';
+      case 'xs': return '340';
       case 'sm': return '360';
       case 'md': return '360';
       case 'lg': return '400';
@@ -88,6 +88,28 @@ export default class Styling extends Vue {
       case 'lg': return 'h4';
       case 'xl': return 'h4';
       default: return 'h4';
+    }
+  }
+
+  get projectText() {
+    switch (this.$vuetify.breakpoint.name) {
+      case 'xs': return 'body-1';
+      case 'sm': return 'h6';
+      case 'md': return 'body-1';
+      case 'lg': return 'body-1';
+      case 'xl': return 'body-1';
+      default: return 'body-1';
+    }
+  }
+
+  get projectTextWeight() {
+    switch (this.$vuetify.breakpoint.name) {
+      case 'xs': return 'normal';
+      case 'sm': return 'light';
+      case 'md': return 'normal';
+      case 'lg': return 'normal';
+      case 'xl': return 'normal';
+      default: return 'normal';
     }
   }
 
@@ -109,6 +131,9 @@ export default class Styling extends Vue {
 }
 </script>
 
-<style scoped>
+<style>
+.img {
+  border-bottom: 1px solid #E0E0E0 !important;
+}
 
 </style>
