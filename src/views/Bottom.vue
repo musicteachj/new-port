@@ -125,7 +125,8 @@ export default class Bottom extends mixins(Styling) {
       screenSizes: ["mdi-cellphone", "mdi-tablet-ipad", "mdi-laptop", "mdi-monitor"],
       text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.",
       tech: ["HTML", "CSS", "JavaScript", "TypeScript", "Vuetify", "Vue.js", "Vuex", "Vue-Router", "Node.js", "Express.js", "MongoDB"],
-      demo: "https://thegreatdb8.herokuapp.com/", code: "https://github.com/jliip51/The-Great-Debate", 
+      demo: "https://hidden-crag-36310.herokuapp.com/",  
+      code: "https://github.com/musicteachj/barcode-gen", 
       collaboration: false
     },
     // {
