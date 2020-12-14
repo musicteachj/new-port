@@ -78,7 +78,6 @@
 
               <v-btn
                 class="code"
-                v-if="index > 1"
                 text
                 :color="p.color"
                 :href="p.code"
