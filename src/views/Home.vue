@@ -2,13 +2,15 @@
   <div id="home" style="background-color:purple">
      <v-card
       flat
-      id="top">
-      <NewTop />
+      id="top"
+    >
+      <Top />
     </v-card>
 
     <v-card
       flat
-      id="bottom">
+      id="bottom"
+    >
       <Bottom />
     </v-card>
     
@@ -19,15 +21,12 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import Top from '@/views/Top.vue';
-import NewTop from '@/views/NewTop.vue';
 import Bottom from '@/views/Bottom.vue';
-// import { set } from 'vue/types/umd';
 
 @Component({
   components: {
     Top,
-    Bottom,
-    NewTop
+    Bottom
   }
 })
 export default class Home extends Vue {
