@@ -109,23 +109,26 @@
         class="pa-2 ml-6 mr-6"
         flat
       >
-      <!-- Refactor this old code to new vuetify -->
-            
-          <v-card flat v-once>
-            <v-tooltip :left="index === 0" :right="index === 1" :color="c.color">
+        <v-card flat>
+          <v-tooltip :left="index === 0" :right="index === 1" :color="c.color">
             <template v-slot:activator="{ on }">
-              <v-img
-                v-on="on"
-                contain
-                :src="c.img"
-                max-width="auto"
-                max-height="auto">
-              </v-img>
+              <a 
+                :href="c.url"
+                target="_blank">
+                <v-img
+                  v-on="on"
+                  contain
+                  :src="c.img"
+                  max-width="auto"
+                  max-height="auto"
+                  :href="c.url"
+                  target="_blank">
+                </v-img>
+              </a>
             </template>
             <span>{{c.tech}}</span>
           </v-tooltip>
-          </v-card>
-        
+        </v-card>
       </v-card>
     </v-row>
   </div>
