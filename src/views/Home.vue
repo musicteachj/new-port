@@ -1,5 +1,5 @@
 <template>
-  <div id="home" style="background-color:purple">
+  <div id="home">
      <v-card
       flat
       id="top"

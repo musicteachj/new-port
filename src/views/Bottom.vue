@@ -1,9 +1,9 @@
 <template>
   <div id="bottomComp">
-    <v-row class="justify-center mb-12 ml-6 mr-6" style="background-color:teal">
+    <v-row class="justify-center mb-12 ml-6 mr-6">
       <h1 :class="`text-${projectsText} font-weight-light`">Projects</h1>
     </v-row>
-    <v-row class="justify-center ml-6 mr-6 mb-12" style="background-color: red">
+    <v-row class="justify-center ml-6 mr-6 mb-12">
       <v-hover
         v-slot:default="{ hover }"
         v-for="(p, index) in projects" 
@@ -97,10 +97,10 @@
         </v-card>
       </v-hover>
     </v-row>
-    <v-row class="justify-center mb-12 ml-6 mr-6" style="background-color:purple">
+    <v-row class="justify-center mb-12 ml-6 mr-6">
       <h1 :class="`text-${projectsText} font-weight-light`">Connect</h1>
     </v-row>
-    <v-row class="justify-center ml-6 mr-6 mb-12" style="background-color:pink">
+    <v-row class="justify-center ml-6 mr-6 mb-16">
       <v-card  
         v-for="(c, index) in connectMedia"
         :key="index"
@@ -112,9 +112,7 @@
         <v-card flat>
           <v-tooltip :left="index === 0" :right="index === 1" :color="c.color">
             <template v-slot:activator="{ on }">
-              <a 
-                :href="c.url"
-                target="_blank">
+              <a :href="c.url" target="_blank">
                 <v-img
                   v-on="on"
                   contain
@@ -135,7 +133,6 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
 import Component, { mixins } from 'vue-class-component';
 import Styling from "@/mixins/Styling.vue";
 
@@ -241,37 +238,12 @@ export default class Bottom extends mixins(Styling) {
 </script>
 
 <style scoped>
-#top {
-  background-color: black;
-}
-
 .name {
   color: white;
   padding-top: 50px;
   font-weight: 250;
   font-size: 50px;
   padding-bottom: 25px;
-}
-
-.testPurple {
-  background-color: purple;
-}
-
-.testOrange {
-  background-color: orange;
-}
-
-.testy {
-  background-color: transparent !important;
-  color: white !important
-}
-
-th {
-  color: white !important;
-}
-
-td, th {
-  border-bottom: 1px solid white !important;
 }
 
 .actionz {

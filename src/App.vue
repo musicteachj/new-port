@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-main id="main" style="background-color:black">
+    <v-main id="main">
       <Home />
     </v-main>
   </v-app>
