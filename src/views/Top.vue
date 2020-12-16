@@ -480,20 +480,4 @@ export default class Top extends mixins(Styling) {
   transform: translateY(-100px);
   opacity: 0;
 }
-
-/* .card {
-  background-color: white;
-  border: 1px solid black;
-} */
-
-/* .divIt {
-  background-color: green;
-  width: 95px;
-  height: 95px;
-} */
-
-/* .divIt2 {
-  width: 175px;
-  height: 75px;
-} */
 </style>

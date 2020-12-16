@@ -1,6 +1,6 @@
 <template>
   <div id="bottomComp">
-    <v-row class="justify-center mb-12">
+    <v-row class="justify-center mb-12 ml-6 mr-6">
       <h1 :class="`text-${projectsText} font-weight-light`">Projects</h1>
     </v-row>
     <v-row class="justify-center ml-6 mr-6 mb-12">
@@ -97,11 +97,42 @@
         </v-card>
       </v-hover>
     </v-row>
+    <v-row class="justify-center mb-12 ml-6 mr-6">
+      <h1 :class="`text-${projectsText} font-weight-light`">Connect</h1>
+    </v-row>
+    <v-row class="justify-center ml-6 mr-6 mb-16">
+      <v-card  
+        v-for="(c, index) in connectMedia"
+        :key="index"
+        :width="cardDim"
+        :height="cardDim"
+        class="pa-2 ml-6 mr-6"
+        flat
+      >
+        <v-card flat>
+          <v-tooltip :left="index === 0" :right="index === 1" :color="c.color">
+            <template v-slot:activator="{ on }">
+              <a :href="c.url" target="_blank">
+                <v-img
+                  v-on="on"
+                  contain
+                  :src="c.img"
+                  max-width="auto"
+                  max-height="auto"
+                  :href="c.url"
+                  target="_blank">
+                </v-img>
+              </a>
+            </template>
+            <span>{{c.tech}}</span>
+          </v-tooltip>
+        </v-card>
+      </v-card>
+    </v-row>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
 import Component, { mixins } from 'vue-class-component';
 import Styling from "@/mixins/Styling.vue";
 
@@ -110,6 +141,9 @@ import CarlosImg from '@/assets/cardAssets/carlos.png';
 import GreatDebateImg from '@/assets/cardAssets/greatDebate.png';
 // import BarcodeGenImg from '@/assets/cardAssets/save.PNG';
 import BarcodeGen from '@/assets/cardAssets/barcodeGen.png';
+
+import GITHUB from '@/assets/techIcons/github2.png';
+import LINKEDIN from '@/assets/techIcons/link-social.png';
 
 // const Carlos = require('@/assets/carlos.png');
 // const GreatDebate = require('@/assets/greatDebate.png');
@@ -184,49 +218,32 @@ export default class Bottom extends mixins(Styling) {
       code: "https://github.com/jliip51/The-Great-Debate", 
       collaboration: true
     }
-   
-    // {name: "Barcode Generator", color: "#453C41", img: "https://picsum.photos/id/11/500/300", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ", tech: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MongoDB", "Vue.js", "Vuetify", "Vue-Barcode", "PrintD"], demo: "https://github.com/musicteachj", code: "https://github.com/musicteachj"},
-    // {name: "Music Calendar", color: "#453C41", img: "https://picsum.photos/id/11/500/300", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ", tech: ["HTML", "CSS", "Sass", "JavaScript", "Node.js", "Express.js", "MongoDB", "Vue.js", "Vuetify"], demo: "https://github.com/musicteachj", code: "https://github.com/musicteachj"},
-    // {name: "React Project", color: "#453C41", img: "https://picsum.photos/id/11/500/300", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ", tech: ["HTML", "CSS", "JavaScript", "Node.js", "MySQL", "React.js"], demo: "https://github.com/musicteachj", code: "https://github.com/musicteachj"}
-
   ];
+
+  connectMedia:  Array<object> = [
+    { tech: "Github", 
+      img: GITHUB, 
+      color: "#008DD2", 
+      url: "https://github.com/musicteachj"
+    },
+    { tech: "LinkedIn", 
+      img: LINKEDIN, 
+      color: "#16689D", 
+      url: "https://www.linkedin.com/in/james-littlefield-93037713b/"
+    }
+  ]
 
 }
 
 </script>
 
 <style scoped>
-#top {
-  background-color: black;
-}
-
 .name {
   color: white;
   padding-top: 50px;
   font-weight: 250;
   font-size: 50px;
   padding-bottom: 25px;
-}
-
-.testPurple {
-  background-color: purple;
-}
-
-.testOrange {
-  background-color: orange;
-}
-
-.testy {
-  background-color: transparent !important;
-  color: white !important
-}
-
-th {
-  color: white !important;
-}
-
-td, th {
-  border-bottom: 1px solid white !important;
 }
 
 .actionz {
