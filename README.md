@@ -1,24 +1,18 @@
-# new-port
+# James L Portfolio
 
-## Project setup
-```
-npm install
-```
+Portfoilio displaying my recent projects.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Screenshots of main pages
+![Top](assets/appImages/portTop.png)
+![Bottom](assets/appImages/portBottom.png)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Built with...
 
-### Lints and fixes files
-```
-npm run lint
-```
+* [Vue.js - JS SPA Framework](https://vuejs.org/)
+* [Vuetify - Vue UI Library](https://vuetifyjs.com/en/)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Author
+
+**James Littlefield**
+* [Portfolio](https://www.jameslittlefield.net/)
+* [LinkedIn](https://www.linkedin.com/in/james-littlefield-93037713b/)
