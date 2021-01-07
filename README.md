@@ -3,8 +3,8 @@
 Portfoilio displaying my recent projects.
 
 ## Screenshots of main pages
-![Top](assets/appImages/portTop.png)
-![Bottom](assets/appImages/portBottom.png)
+![portTop](assets/appImages/portTop.png)
+![portBottom](assets/appImages/portBottom.png)
 
 ## Built with...
 
