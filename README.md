@@ -11,6 +11,10 @@ Portfoilio displaying my recent projects.
 * [Vue.js - JS SPA Framework](https://vuejs.org/)
 * [Vuetify - Vue UI Library](https://vuetifyjs.com/en/)
 
+## Deployed with...
+
+* [AWS - Amazon Web Services](https://aws.amazon.com/)
+
 ## Author
 
 **James Littlefield**
