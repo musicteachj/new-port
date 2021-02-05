@@ -157,8 +157,8 @@ export default class Bottom extends mixins(Styling) {
       color: "#323EA0", 
       img: BarcodeGen,
       screenSizes: ["mdi-cellphone", "mdi-tablet-ipad", "mdi-laptop", "mdi-monitor"],
-      text: "The Great DB8 is a full stack debate website inspired by Reddit that allows users to create an account and comment on admin curated topics.",
-      tech: ["HTML", "CSS", "JavaScript", "TypeScript", "Vuetify", "Vue.js", "Vuex", "Vue-Router", "Node.js", "Express.js", "MongoDB"],
+      text: "Users can Scan or Create their own barcodes from a number of types and specifications. Once saved in the Scan/Create phase, users can head to the Print page for deletion and printing. Validations are provided for user creation on barcode types. 20 Barcode limit.",
+      tech: ["HTML", "CSS", "JavaScript", "TypeScript", "Vuetify", "Vue.js", "Vuex", "Vue-Router", "Vue-barcode", "Node.js", "Express.js", "MongoDB", "Heroku"],
       demo: "https://hidden-crag-36310.herokuapp.com/",  
       code: "https://github.com/musicteachj/barcode-gen", 
       collaboration: false
